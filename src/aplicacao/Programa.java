@@ -1,12 +1,12 @@
 package aplicacao;
 
-import modelo.entidades.Departamento;
+import modelo.entidades.Department;
 
 public class Programa {
 
 	public static void main(String[] args) {
 		
-		Departamento obj = new Departamento(1, "Livros");
+		Department obj = new Department(1, "Livros");
 		
 		System.out.println(obj);
 	}

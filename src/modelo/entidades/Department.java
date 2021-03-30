@@ -2,20 +2,20 @@ package modelo.entidades;
 
 import java.io.Serializable;
 
-public class Departamento implements Serializable {
+public class Department implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
-	private String nome;
+	private String name;
 	
-	public Departamento () {
+	public Department () {
 		
 	}
 	
-	public Departamento (Integer id, String nome) {
+	public Department (Integer id, String name) {
 		this.id = id;
-		this.nome = nome;
+		this.name = name;
 	}
 	
 	public Integer getId () {
@@ -26,12 +26,12 @@ public class Departamento implements Serializable {
 		this.id = id;
 	}
 	
-	public String getNome () {
-		return nome;
+	public String getName () {
+		return name;
 	}
 	
-	public void setNome (String nome) {
-		this.nome = nome;
+	public void setName (String name) {
+		this.name = name;
 	}
 	
 	@Override
@@ -50,7 +50,7 @@ public class Departamento implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Departamento outro = (Departamento) obj;
+		Department outro = (Department) obj;
 		if (id == null) {
 			if (outro.id != null)
 				return false;
@@ -61,6 +61,6 @@ public class Departamento implements Serializable {
 	
 	@Override
 	public String toString () {
-		return "Departamento [id = " + id + ", nome = " + nome + "]";
+		return "Department [id = " + id + ", nome = " + name + "]";
 	}
 }
