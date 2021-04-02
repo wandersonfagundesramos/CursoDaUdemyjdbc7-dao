@@ -1,7 +1,10 @@
 package aplicacao;
 
+import java.util.List;
+
 import modelo.dao.DaoFactory;
 import modelo.dao.SellerDao;
+import modelo.entidades.Department;
 import modelo.entidades.Seller;
 
 public class Programa {
@@ -19,5 +22,15 @@ public class Programa {
 		Seller seller = sellerDao.findById(3);
 		
 		System.out.println(seller);
+		
+		System.out.println("\n=== TEST 2 : Seller findByDepartment ===");
+		
+		Department department = new Department(2, null);
+		
+		List<Seller> lista = sellerDao.findByDepartment(department);
+		
+		for (Seller obj : lista) {
+			System.out.println(obj);
+		}
 	}
 }
