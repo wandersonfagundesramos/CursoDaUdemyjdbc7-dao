@@ -24,6 +24,8 @@ public class Programa {
 		
 		System.out.println(seller);
 		
+		System.out.println("==========================================");
+		
 		System.out.println("\n=== TEST 2 : Seller findByDepartment ===");
 		
 		Department department = new Department(2, null);
@@ -34,6 +36,8 @@ public class Programa {
 			System.out.println(obj);
 		}
 		
+		System.out.println("==========================================");
+		
 		System.out.println("\n=== TEST 3 : Seller findAll ===");
 		
 		lista = sellerDao.findAll();
@@ -42,6 +46,8 @@ public class Programa {
 			System.out.println(obj);
 		}
 		
+		System.out.println("==========================================");
+		
 		System.out.println("\n=== TEST 4 : Seller insert ===");
 		
 		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, department);
@@ -49,5 +55,17 @@ public class Programa {
 		sellerDao.insert(newSeller);
 		
 		System.out.println("Insert! Novo id = " + newSeller.getId());
+	
+		System.out.println("==========================================");
+	
+		System.out.println("\n=== TEST 5 : Seller update ===");
+		
+		seller = sellerDao.findById(1);
+		
+		seller.setName("Marta Waine");
+		
+		sellerDao.update(seller);
+		
+        System.out.println("Update completo! ");
 	}
 }
