@@ -2,6 +2,7 @@ package aplicacao;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import modelo.dao.DaoFactory;
 import modelo.dao.SellerDao;
@@ -15,6 +16,8 @@ public class Programa {
 		System.out.println("Programa em Java que acessa os dados do banco de dados MySQL.");
 		
 		System.out.println();
+		
+		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("=== TEST 1 : Seller findById ===");
 		
@@ -67,5 +70,18 @@ public class Programa {
 		sellerDao.update(seller);
 		
         System.out.println("Update completo! ");
+        
+        System.out.println("==========================================");
+    	
+		System.out.println("\n=== TEST 6 : Seller delete ===");
+		
+		System.out.println("Informe um número de id para deletar no banco de dados.");
+		int id = sc.nextInt();
+		
+		sellerDao.deleteById(id);
+		
+		System.out.println("Delete completado!");
+		
+		sc.close();
 	}
 }
